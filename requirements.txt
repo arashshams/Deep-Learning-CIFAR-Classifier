@@ -6,3 +6,6 @@ scikit-learn
 tensorflow
 keras
 jupyter
+Pillow
+streamlit
+
