@@ -65,6 +65,33 @@ Deep-Learning-CIFAR-Classifier/
 └── README.md
 ```
 
+## ⚙️ Installation
 
+1- Clone the repository:
 
+```
+git clone https://github.com/arashshams/Deep-Learning-CIFAR-Classifier.git
+cd Deep-Learning-CIFAR-Classifier
+```
+2- Create a virtual environment:
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+3- Install dependencies:
+```
+pip install -r requirements.txt
+```
+4- Run the Streamlit App
+```
+streamlit run app/app.py
+```
 
+## 🙌 Contributions
+
+Pull requests are welcome!
+For major changes, please open an issue first to discuss your ideas.
+
+## 📜 License
+
+[MIT License](https://opensource.org/licenses/MIT)
