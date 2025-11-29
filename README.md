@@ -1,19 +1,67 @@
-# Deep Learning CIFAR Classifier
+# 🚀 CIFAR-10 Ensemble Image Classifier  
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_GITHUB_USERNAME/deep-learning-cifar-classifier/blob/main/notebooks/cifar10_image_classification.ipynb)
+An end-to-end deep learning project for image classification using the **CIFAR-10 dataset**, featuring:
 
-Deep learning image classification project using the CIFAR-10 dataset (with planned extensions to CIFAR-100).  
-This project compares several convolutional neural network (CNN) architectures and a transfer learning model (VGG16), and will be extended with explainability (Grad-CAM), data augmentation, and an interactive prediction interface.
+- Multiple CNN architectures  
+- Transfer learning (VGG16)  
+- An **ensemble prediction model**  
+- A fully functional **Streamlit web app**  
+- Model evaluation: confusion matrix, classification report  
+- Modular and extendable project structure  
 
-## Repository structure
+---
 
+## 🌐 Live Demo (App)
+
+Here is the [link](https://deep-learning-cifar-classifier-xc2cd4emw6cxuvskmpnger.streamlit.app/) to the deployed application. Feel free to give it a shot. 🎯
+
+You can also run the app locally:  
+```bash
+streamlit run app/app.py
+```
+
+🖥 Streamlit App Features
+
+Upload your own 32×32 or larger images
+
+Generate random CIFAR-10 test samples
+
+Ensemble prediction with confidence score
+
+Dark mode toggle 🌙
+
+GitHub link button
+
+Clean 2-column UI
+
+Refresh button for random sampling
+
+![App Demo](reports/figures/app_demo.gif)
+
+
+## 📂 Project Structure
 ```text
-deep-learning-cifar-classifier/
+Deep-Learning-CIFAR-Classifier/
+│
+├── app/
+│   └── app.py                   # Streamlit web application
+│
 ├── notebooks/
-│   └── cifar10_image_classification.ipynb   # main notebook (training, evaluation, experiments)
-├── src/                                     # python modules (to be added)
-├── models/                                  # saved models (not versioned by default)
+│   └── CIFAR_10_Image_Classification.ipynb
+│
+├── src/
+│   ├── predict.py               # ensemble prediction logic
+│   └── data.py                  # dataset helpers (optional)
+│
+├── models/                      # trained models (.h5)
+│
 ├── reports/
-│   └── figures/                             # plots and figures
-├── requirements.txt                         # python dependencies
-└── .gitignore
+│   └── figures/                 # plots, app GIF, etc.
+│
+├── requirements.txt             
+└── README.md
+```
+
+
+
+
