@@ -36,7 +36,7 @@ if option == "Upload an image":
     uploaded = st.file_uploader("Upload a JPG or PNG image", type=["jpg", "jpeg", "png"])
     if uploaded is not None:
         img = Image.open(uploaded).convert("RGB")
-        st.image(img, caption="Uploaded image", use_column_width=True)
+        st.image(img, caption="Uploaded image", use_container_width=True)
 
         pred_idx, conf, probs = ensemble_predict(models, img)
         st.write(f"**Prediction:** {cifar10_classes[pred_idx]}")
@@ -52,7 +52,7 @@ else:
     true_label = int(y_test[idx][0])
 
     img = Image.fromarray(img_arr)
-    st.image(img, caption=f"Actual label: {cifar10_classes[true_label]}", use_column_width=True)
+    st.image(img, caption=f"Actual label: {cifar10_classes[true_label]}", use_container_width=True)
 
     pred_idx, conf, probs = ensemble_predict(models, img)
     st.write(f"**Prediction:** {cifar10_classes[pred_idx]}")
