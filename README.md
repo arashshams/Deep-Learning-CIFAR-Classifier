@@ -36,7 +36,7 @@ Clean 2-column UI
 
 Refresh button for random sampling
 
-![App Demo](reports/figures/app_demo.gif)
+![App Demo](reports/figures/app-demo.gif)
 
 
 ## 📂 Project Structure
