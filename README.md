@@ -37,8 +37,9 @@ Clean 2-column UI
 Refresh button for random sampling
 
 <p align="center">
-  <img src="reports/figures/app_demo.gif" width="800">
+  <img src="reports/figures/app-demo.gif" width="800">
 </p>
+
 
 
 ## 📂 Project Structure
