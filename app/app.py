@@ -2,10 +2,6 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -91,6 +87,27 @@ col_right.subheader("Image Preview")
 # Upload mode
 if option == "Upload an image":
     uploaded = st.sidebar.file_uploader("Upload a JPG or PNG image", type=["jpg", "jpeg", "png"])
+
+    # CIFAR-10 valid label guide (added here)
+    st.sidebar.markdown("### 🗂 Valid CIFAR-10 Classes")
+    st.sidebar.markdown(
+        """
+        <div style="font-size:14px; line-height:1.4; padding-left:4px;">
+        • airplane<br>
+        • automobile<br>
+        • bird<br>
+        • cat<br>
+        • deer<br>
+        • dog<br>
+        • frog<br>
+        • horse<br>
+        • ship<br>
+        • truck
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
     if uploaded is not None:
         img = Image.open(uploaded).convert("RGB")
         col_right.image(img, caption="Uploaded image", use_container_width=True)
@@ -99,7 +116,7 @@ if option == "Upload an image":
         col_left.write(f"### Prediction: **{cifar10_classes[pred_idx]}**")
         col_left.write(f"### Confidence: **{conf:.3f}**")
 
-# Random CIFAR-10 image mode
+# Random CIFAR-10 test image mode
 else:
     from tensorflow.keras.datasets import cifar10
     (_, _), (x_test, y_test) = cifar10.load_data()
@@ -112,13 +129,10 @@ else:
     col_right.image(img, use_container_width=True)
 
     col_right.markdown(
-    f"<h3 style='text-align:center; font-size:22px;'>Actual label: {cifar10_classes[true_label]}</h3>",
-    unsafe_allow_html=True
-)
-
+        f"<h3 style='text-align:center; font-size:22px;'>Actual label: {cifar10_classes[true_label]}</h3>",
+        unsafe_allow_html=True
+    )
 
     pred_idx, conf, probs = ensemble_predict(models, img)
     col_left.write(f"### Prediction: **{cifar10_classes[pred_idx]}**")
     col_left.write(f"### Confidence: **{conf:.3f}**")
-
-
