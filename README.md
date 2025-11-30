@@ -87,6 +87,29 @@ pip install -r requirements.txt
 streamlit run app/app.py
 ```
 
+### 🐳 Running the App with Docker
+
+This project also includes a fully containerized version of the CIFAR-10 classifier using Docker.  
+Containerization ensures consistent execution across machines without manually installing Python
+or dependencies.
+
+To build and run the Dockerized app:
+
+```bash
+# Build the Docker image
+docker build -t cifar-app .
+```
+and then:
+
+```bash
+# Run the container
+docker run -p 8501:8501 cifar-app
+```
+After running the container, the app will be available at:
+```bash
+http://localhost:8501
+```
+
 ## 🙌 Contributions
 
 Pull requests are welcome!
